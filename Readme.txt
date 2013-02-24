@@ -8,11 +8,10 @@ takes control immediately after reset. If a certain hardware condition is met
 data on the USB interface and loads it into the remaining part of the flash
 memory. If the condition is not met, control is passed to the loaded firmware.
 
-This boot loader is similar to Thomas Fischl's avrusbboot and our own
-bootloadHID, but it requires no separate command line tool to upload the data.
-USBaspLoader emulates Thomas Fischl's USBasp programmer instead. You can thus
-use AVRDUDE to upload flash memory data (and if the option is enabled) EEPROM
-data.
+This boot loader is similar to Thomas Fischl's avrusbboot and bootloadHID, but 
+it requires no separate command line tool to upload the data.  USBaspLoader 
+emulates Thomas Fischl's USBasp programmer instead. You can thus use AVRDUDE 
+to upload flash memory data (and if the option is enabled) EEPROM data.
 
 Since USBaspLoader cooperates with AVRDUDE, it can be used in conjunction with
 the Arduino software to upload flash memory data.
@@ -101,9 +100,30 @@ directory for details.
 
 MORE INFORMATION
 ================
-For questions, reports, suggestions or just for fun please contact
-Stephan Baerwolf (matrixstorm@gmx.de) and/or visit demonstration-board
+The primary purpose of this fork is to provide ready to use firmware for the 
+LCsoft USBasp hardware (commonly fond on eBay, look for LCsoft on PCB). This 
+release is forked from 
+
+   https://github.com/baerwolf/USBaspLoader
+
+which is a fork from the original USBaspLoader from the V-USB project:
+
+   http://www.obdev.at/products/vusb/usbasploader.html
+
+Stephen Baerwolf has done significant work in enhancing and optimizing the 
+USBASPLoader code.
+
+For questions, issues, suggestions on this LCsoft fork, please contact
+Stan Hall (slackmasterstan@gmail.com).  
+
+For more information about the USBaspLoader fork that this is based upon check
+the github repository:
+
+   https://github.com/baerwolf/USBaspLoader
+
+or and/or visit demonstration-board
 for USBaspLoader at http://matrixstorm.com/avr/tinyusbboard/
+
 
 For more information about Objective Development's firmware-only USB driver
 for Atmel's AVR microcontrollers please visit the URL
@@ -113,8 +133,11 @@ for Atmel's AVR microcontrollers please visit the URL
 A technical documentation of the driver's interface can be found in the
 file "firmware/usbdrv/usbdrv.h".
 
-
 --
+more recent verison:
+(c) 2013 by Stan Hall
+slackmasterstan@gmail.com
+
 recent version:
 (c) 2012 by Stephan Baerwolf
 matrixstorm@gmx.de

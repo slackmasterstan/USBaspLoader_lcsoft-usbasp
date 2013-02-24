@@ -599,6 +599,9 @@ int __attribute__((__noreturn__)) main(void)
 	wdt_disable();    /* main app may have enabled watchdog */
 #endif
         initForUsbConnectivity();
+#if LED_ENABLED
+	led_on();
+#endif
         do{
             usbPoll();
 #if BOOTLOADER_CAN_EXIT
@@ -640,6 +643,9 @@ asm  volatile  (
         }while (1);  		/* main event loop */
 #endif
     }
+#if LED_ENABLED
+	led_off();
+#endif
     leaveBootloader();
 }
 

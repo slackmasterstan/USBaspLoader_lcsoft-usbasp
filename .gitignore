@@ -1,0 +1,4 @@
+main.hex
+main.bin
+*.o
+*.pnws

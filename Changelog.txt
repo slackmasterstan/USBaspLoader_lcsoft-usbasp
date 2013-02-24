@@ -2,7 +2,6 @@ This file documents changes in the firmware of USBaspLoader.
 New entries are always appended to the end of the file. Scroll down to the
 bottom to see the most recent changes.
 
-
 * Release 2008-01-21
 
 - Use most recent driver.
@@ -22,3 +21,20 @@ bottom to see the most recent changes.
 - Updated usbconfig.h to the latest template (mostly new comments).
 
 * Release 2010-07-27
+
+* 20130224 - slackmasterstan@gmail.com
+Initial modifications for LCsoft hardware
+  Cloned from https://github.com/baerwolf/USBaspLoader/commit/7fa50af9596a7a9bd031279a2e5747d897de82f1
+- modified Makefile.inc for LCsoft hardware
+- modified Makefile.inc to remove "echo" from AVRDUDE command line
+- modified Makefile.inc to reduce size, default options were too large for atmega8 using avrgcc 4.3.3
+- modified bootloaderconfig.h for LCsoft hardware
+- modified bootloaderconfig.h to add active LED option
+- modified main.c add active LED option
+- updater would not compile. Ignored as it is not usable as the SPM interface is disabled to save memory.
+- Documentation updates
+   - updated Readme.txt
+   - fixed date and trimmed last update in Changelog.txt 
+   - added Todo.txt
+   
+   

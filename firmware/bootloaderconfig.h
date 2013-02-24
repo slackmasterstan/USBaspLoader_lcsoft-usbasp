@@ -52,35 +52,42 @@ these macros are defined, the boot loader usees them.
 /* ---------------------------- Hardware Config ---------------------------- */
 
 #ifndef USB_CFG_IOPORTNAME
-  #define USB_CFG_IOPORTNAME      D
+  #define USB_CFG_IOPORTNAME      B
 #endif
 /* This is the port where the USB bus is connected. When you configure it to
  * "B", the registers PORTB, PINB and DDRB will be used.
  */
 #ifndef USB_CFG_DMINUS_BIT
-  #define USB_CFG_DMINUS_BIT      6	/* old value was 4 */
+  #define USB_CFG_DMINUS_BIT      0	
 #endif
 /* This is the bit number in USB_CFG_IOPORT where the USB D- line is connected.
  * This may be any bit in the port.
  */
 #ifndef USB_CFG_DPLUS_BIT
-  #define USB_CFG_DPLUS_BIT       2
+  #define USB_CFG_DPLUS_BIT       1
 #endif
 /* This is the bit number in USB_CFG_IOPORT where the USB D+ line is connected.
  * This may be any bit in the port. Please note that D+ must also be connected
  * to interrupt pin INT0!
  */
 #ifndef JUMPER_PORT
-  #define JUMPER_PORT		USB_CFG_IOPORTNAME
+  #define JUMPER_PORT		C
 #endif
 /* 
  * jumper is connected to this port
  */
 #ifndef JUMPER_BIT
-  #define JUMPER_BIT		7	/* old value was 0 */
+  #define JUMPER_BIT		2	/* old value was 0 */
 #endif
 /* 
  * jumper is connected to this bit in port "JUMPER_PORT", active low
+ */
+
+#define LED_ENABLED	1
+#define led_on() 	(DDRC |= (1<<PC0)|(1<<PC1))
+#define led_off() 	(DDRC &= ~((1<<PC0)|(1<<PC1)))
+/*
+ * status LED enabled 
  */
 
 #define USB_CFG_CLOCK_KHZ       (F_CPU/1000)

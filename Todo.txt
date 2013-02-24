@@ -1,0 +1,9 @@
+* 20130224 Additional changes for LCsoft USBasp hardware so that this branch is standalone.
+  - update Schematic.txt (pins, header, behavior, remove updater)
+  
+* 20130224 update to newer version of GCC and see if there are any memory savings.
+* 20130224 Fix (reduce flash usage) or remove SPM code and updater utility.
+* 20130224 Verify program button logic described in Schematic.txt and change to require that jumper is held.
+* 20130224 Reconsider how to put in program mode (reset?)
+* 20130224 Communicate memory issues (atmega8) and LED code to Baerwolf for inclusion in upstream repository.
+

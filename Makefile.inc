@@ -5,7 +5,7 @@
 # Tabsize: 4
 # License: GNU GPL v2 (see License.txt)
 
-F_CPU = 16000000
+F_CPU = 12000000L
 DEVICE = atmega8
 
 # where the updating firmware should be located (starting address)
@@ -32,7 +32,7 @@ LOCKOPT = -U lock:w:0x3f:m
 # you may also want to UNprogram  SUT1 to get a SLOWER bootup (lfuse then would be 0x3f)
 FUSEOPT_8            = -U lfuse:w:0x1f:m -U hfuse:w:0xc0:m
 BOOTLOADER_ADDRESS_8 = 0x1800
-DEFINES_8            = -DCONFIG_USE__EXCESSIVE_ASSEMBLER -DCONFIG_NO__NEED_WATCHDOG -DCONFIG_NO__PRECISESLEEP
+DEFINES_8            = -DCONFIG_NO__HAVE_SPMINTEREFACE -DCONFIG_NO__EEPROM_PAGED_ACCESS -DCONFIG_NO__NEED_WATCHDOG -DCONFIG_NO__PRECISESLEEP
 
 
 FUSEOPT_1284            = -U lfuse:w:0xd7:m -U hfuse:w:0xd0:m -U efuse:w:0xfc:m
@@ -237,7 +237,7 @@ NEW_BOOTLOADER_ADDRESS = $(BOOTLOADER_ADDRESS)
 
 # Tools:
 AVRPATH = $(AVR8TOOLCHAINBINDIR)
-AVRDUDE = @echo avrdude $(PROGRAMMER) -p $(DEVICE)
+AVRDUDE = avrdude $(PROGRAMMER) -p $(DEVICE)
 
 ECHO=@echo
 GCC=@gcc
